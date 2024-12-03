@@ -26,4 +26,4 @@ for line in doDontMul:
         numbers = list(map(int, re.findall(r'\d+', line))) #gets only the integers from each line
         count += numbers[0] * numbers[1]
         
-print("All added up multiplications with conditionals: " + str(count))
+print("All added up multiplications with conditionals: " + str(count)) #Answer to part 2
