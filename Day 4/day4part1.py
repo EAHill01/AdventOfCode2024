@@ -48,4 +48,4 @@ with open(file) as file:
         wordsearch.append(list(str(line.split())))
  
 findX(wordsearch)
-print("Number of XMAS words found: " + str(foundXmas))
+print("Number of XMAS words found: " + str(foundXmas)) #Answer to part 1
