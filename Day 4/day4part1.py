@@ -1,6 +1,5 @@
 file = "day4input.txt"
 
-#global variable used
 foundXmas = 0
 
 def findX(wordsearch):
@@ -18,20 +17,17 @@ def checkWord(wordsearch, letter, i, j, dir, vertLen, horLen):
             for x in directions: #checks every direction from the X
                 check = checkDir(wordsearch, (i + x[0]), (j + x[1]), goal, vertLen, horLen)
                 if check:
-                    print("Found " + goal + ", searching for next letter")
                     checkWord(wordsearch, goal, (i + x[0]), (j + x[1]), x, vertLen, horLen)
         case "M":
             goal = "A" #only check the same direction that M was found in
             check = checkDir(wordsearch, (i + dir[0]), (j + dir[1]), goal, vertLen, horLen)
             if check:
-                print("Found " + goal + ", searching for next letter")
                 checkWord(wordsearch, goal, (i + dir[0]), (j + dir[1]), dir, vertLen, horLen)
         case "A": 
             goal = "S" #only check the same direction that A was found in
             check = checkDir(wordsearch, (i + dir[0]), (j + dir[1]), goal, vertLen, horLen)
             if check:
                 foundXmas += 1 #adds to the global variable
-                print("Found S, adding to FoundXmas")
     
 def checkDir(wordsearch, i,j, goal, vertLen, horLen):
     if i != vertLen and j != horLen and i>=0 and j>=0: #not at the edge of the puzzle
